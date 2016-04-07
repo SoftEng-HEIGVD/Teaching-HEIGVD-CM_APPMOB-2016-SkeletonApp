@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('citizen-engagement', ['ionic', 'citizen-engagement.auth', 'citizen-engagement.constants'])
+angular.module('citizen-engagement', ['ionic', 'leaflet-directive', 'citizen-engagement.auth', 'citizen-engagement.constants', 'citizen-engagement.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -47,6 +47,7 @@ angular.module('citizen-engagement', ['ionic', 'citizen-engagement.auth', 'citiz
       views: {
         // The "tab-newIssue" view corresponds to the <ion-nav-view name="tab-newIssue"> directive used in the tabs.html template.
         'tab-newIssue': {
+          controller: 'NewIssueCtrl',
           // This defines the template that will be inserted into the directive.
           templateUrl: 'templates/newIssue.html'
         }
@@ -57,6 +58,7 @@ angular.module('citizen-engagement', ['ionic', 'citizen-engagement.auth', 'citiz
       url: '/issueMap',
       views: {
         'tab-issueMap': {
+          controller: 'IssueMapCtrl',
           templateUrl: 'templates/issueMap.html'
         }
       }
